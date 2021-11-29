@@ -354,7 +354,8 @@ template {
 --redborder: #000000;
 --backgroundcolourofbody: #ffffff;
 --backgroundcolourofsection: #ffffff;
---backgroundcolourofsubection: #6106ab;
+--backgroundcolourofsubsection_primary: rgb(139,0,207);
+--backgroundcolourofsubsection_secondary: linear-gradient(0deg, rgba(139,0,207,1) 0%, rgba(255,0,173,1) 100%);
 --background_body_colour_primary: rgb(0,195,252);
 --background_body_colour_secondary: linear-gradient(to top, #00c3fc, #27afff, #8193ff, #c767ee, #f80bb3);
 --textcolourlightmode: #ffffff;
@@ -438,7 +439,8 @@ section {
   margin: 0em 2em 1em 2em;
   justify-content: center;
   width: 100%;
-  background-color: var(--backgroundcolourofsubection);
+  background: var(--backgroundcolourofsubsection_primary);
+  background: var(--backgroundcolourofsubsection_secondary);
   border: solid;
 } 
 
