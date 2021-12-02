@@ -34,6 +34,8 @@ function getLocation() {
     };
 };
 
+// Fucntion coudl be better, maybe make two functions? Nobody was able to figure it out on Discord. there's no error catch or whatever.
+// Naming scheme is very bad.
 
 function showPosition(position) {
     let lat = position.coords.latitude
