@@ -400,7 +400,7 @@ section {
   width: 100%;
   height: 50%;
 }.heroimage {
-  background-image: url("/img/nfsheroimage_vignette.jpg");
+  background-image: url("./img/nfsheroimage_vignette.jpg");
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -484,7 +484,7 @@ section {
   }
   
   .heroimage {
-    /* background-image: url("/img/nfsheroimage_vig_2.jpg"); */
+    background-image: url("./img/nfsheroimage_vignette.jpg");
     background-size: cover;
     width: 100%;
   }
