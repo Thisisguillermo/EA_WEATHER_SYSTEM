@@ -1,3 +1,10 @@
+
+// TODO
+// Better ICONS
+// Days https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/blob/master/src/openweathermap_org.js
+// https://stackoverflow.com/questions/19583312/display-day-of-the-week-with-javascript-date/19583987
+
+// API key needs to be at back-end because .env isn't enoug and can be extraccted
 const apiKey = 'dd7abd123d47b36357eb5e8568f8526f';
 let weatherUnits = 'metric';
 let weatherDisplayLanguage = 'en';
