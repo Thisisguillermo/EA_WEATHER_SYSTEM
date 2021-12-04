@@ -97,11 +97,11 @@ function showPosition(position) {
                 img.src = openWeatherPicture;
                 document.getElementById('icon1').appendChild(img);
 
-                function vibrate() {
+                function vibrateTest() {
                     navigator.vibrate(1000)
                 }
 
-                vibrate();
+                vibrateTest();
 
 
             };
