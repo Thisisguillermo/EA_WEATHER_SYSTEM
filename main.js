@@ -97,7 +97,10 @@ function showPosition(position) {
                 img.src = openWeatherPicture;
                 document.getElementById('icon1').appendChild(img);
 
+                var successBool = navigator.vibrate(pattern);
                 navigator.vibrate(1000)
+
+                successBool();
 
 
             };
