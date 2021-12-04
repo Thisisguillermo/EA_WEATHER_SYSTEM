@@ -456,6 +456,7 @@ section {
   order: 2;
 }
 
+
 /* Mobile */
 
 @media only screen and (max-width: 600px) {
@@ -466,6 +467,10 @@ section {
     font-size: 1.0em;
     display: flex;
     justify-content: center;
+  }
+
+  .main-container {
+    height: 70%;
   }
   
   section {
