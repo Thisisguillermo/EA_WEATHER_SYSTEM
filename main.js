@@ -7,9 +7,11 @@
 // API key needs to be at back-end because .env isn't enoug and can be extraccted
 const apiKey = 'dd7abd123d47b36357eb5e8568f8526f';
 let weatherUnits = 'metric';
-let weatherDisplayLanguage = 'en';
+weatherDisplayLanguage = navigator.language
 
-// meanWeather
+console.log(weatherDisplayLanguage)
+
+// mainnWeather
 let TemperatureDescription = document.querySelector('.temperature-description');
 let TemperatureDegree = document.querySelector('.temperature-degree');
 let LocationTimezone = document.querySelector('.location-timezone');
@@ -34,6 +36,7 @@ let TemperatureDescription4 = document.querySelector('.temperature-description_4
 // let LocationDate = document.querySelector('.location-date');
 let WeatherIcon4 = document.querySelector('.weathericon_4');
 
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -48,8 +51,25 @@ function showPosition(position) {
     let lat = position.coords.latitude
     let long = position.coords.longitude
     console.log(lat, long);
-    let api = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&units=${weatherUnits}&lang=${weatherDisplayLanguage}&appid=${apiKey}`
-    let api2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${weatherUnits}&lang=${weatherDisplayLanguage}&appid=${apiKey}`
+
+    // let apimisc = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&lang={lang}&units=${weatherUnits}&appid=${apiKey}`
+
+    let api = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&lang=${weatherDisplayLanguage}&units=${weatherUnits}&appid=${apiKey}`
+    let api2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&lang=${weatherDisplayLanguage}&units=${weatherUnits}&appid=${apiKey}`
+
+    console.log(api);
+    console.log(api2);
+    // console.log(apimisc);
+
+    // fetch(apimisc)
+    //     .then(response => {
+    //         return response.json();
+    //     })
+    //     .then(data => {
+    //         console.log(data.city.country + " asdasdasdsa FIRST")
+    //         const countryLocal = data.city.country;
+    //         weatherDisplayLanguage = countryLocal;
+    //     })
 
     fetch(api)
         .then(response => {
@@ -63,6 +83,7 @@ function showPosition(position) {
                 const location = data.city.name;
                 const { description } = data.list[0].weather[0];
                 const { weathermain, icon, id } = data.list[0].weather[0];
+                console.log(data.city.country)
 
                 // set DOM elements from the api
                 TemperatureDegree.textContent = Math.floor(temp) + '°';
@@ -75,6 +96,10 @@ function showPosition(position) {
                 let img = document.createElement('img');
                 img.src = openWeatherPicture;
                 document.getElementById('icon1').appendChild(img);
+
+                navigator.vibrate(1000)
+
+
             };
 
 
