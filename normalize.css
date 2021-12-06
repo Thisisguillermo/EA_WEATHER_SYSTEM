@@ -461,7 +461,7 @@ section {
 
 @media only screen and (max-width: 600px) {
   body {
-    height: 100%;
+    height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     font-size: 1.0em;
@@ -470,7 +470,7 @@ section {
   }
 
   .main-container {
-    height: 100vh;
+    height: 70%;
   }
   
   section {
