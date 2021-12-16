@@ -5,6 +5,7 @@
 // https://stackoverflow.com/questions/19583312/display-day-of-the-week-with-javascript-date/19583987
 
 // API key needs to be at back-end because .env isn't enoug and can be extraccted
+// Lanuguage is based off the browser settings don't forget that GUILLERMOOOOOOO
 const apiKey = 'dd7abd123d47b36357eb5e8568f8526f';
 let weatherUnits = 'metric';
 weatherDisplayLanguage = navigator.language
@@ -128,6 +129,18 @@ function showPosition(position) {
                 img.src = openWeatherPicture2;
                 document.getElementById('icon_2').appendChild(img);
 
+
+                // Date/day function of sub-weather.
+                const date_Of_Sub_Weather = () => {
+                    const fullDate = new Date();
+                    const options = { weekday: 'long' };
+                    fullDate.setDate(fullDate.getDate() + 1);
+                    let dayOfFullDate = fullDate.toLocaleDateString(`${weatherDisplayLanguage}`, options).toUpperCase();
+                    document.getElementById('dayoftomorrow').innerHTML = dayOfFullDate;
+                }
+
+                date_Of_Sub_Weather();
+
             }
 
             subWeather()
@@ -138,18 +151,31 @@ function showPosition(position) {
                 const tempThree = data.daily[1].temp.day;
                 const description = data.daily[1].weather[0].description;
 
-                // Set data to DOM element(s)
+                // Set data to DOM element(s).
 
                 TemperatureDegree3.textContent = Math.floor(tempThree) + '°';
                 TemperatureDescription3.textContent = description[0].toUpperCase() + description.slice(1).toLowerCase()
                 // LocationDate.textContent = date.slice(5, 10);
 
+                // Static weather icon, needs to be replaced with a better one. (Check the index.html and script guillermo).
                 openWeatherIconId2 = iconThree
                 let openWeatherPicture2 = `http://openweathermap.org/img/wn/${openWeatherIconId2}@2x.png`;
 
                 let img = document.createElement('img');
                 img.src = openWeatherPicture2;
                 document.getElementById('icon_3').appendChild(img);
+
+                // Date/day function of sub-weather.
+                const date_Of_Sub_Weather_2 = () => {
+                    const fullDate = new Date();
+                    const options = { weekday: 'long' };
+                    fullDate.setDate(fullDate.getDate() + 2);
+                    let dayOfFullDate = fullDate.toLocaleDateString(`${weatherDisplayLanguage}`, options).toUpperCase();
+                    document.getElementById('dayofaftertomorrow').innerHTML = dayOfFullDate;
+                }
+
+                date_Of_Sub_Weather_2();
+
             }
 
             subWeatherTwo();
@@ -172,6 +198,18 @@ function showPosition(position) {
                 let img = document.createElement('img');
                 img.src = openWeatherPicture2;
                 document.getElementById('icon_4').appendChild(img);
+
+                // Date/day function of sub-weather.
+                const date_Of_Sub_Weather_3 = () => {
+                    const fullDate = new Date();
+                    const options = { weekday: 'long' };
+                    fullDate.setDate(fullDate.getDate() + 3);
+                    let dayOfFullDate = fullDate.toLocaleDateString(`${weatherDisplayLanguage}`, options).toUpperCase();
+                    document.getElementById('dayofafteraftertomorrow').innerHTML = dayOfFullDate;
+                }
+
+                date_Of_Sub_Weather_3();
+
             }
 
             subWeatherThree();
