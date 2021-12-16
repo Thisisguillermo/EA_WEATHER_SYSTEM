@@ -435,7 +435,7 @@ section {
   display: flex;
   flex-flow: row wrap;
   margin: 0em 2em 1em 2em;
-  padding: 0em 0em 1em 0em;
+  padding: 1em 0em 1em 0em;
   justify-content: center;
   width: 100%;
   background: var(--backgroundcolourofsubsection_primary);
@@ -461,7 +461,7 @@ section {
 
 @media only screen and (max-width: 600px) {
   body {
-    height: 90vh;
+    height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     font-size: 1.0em;
